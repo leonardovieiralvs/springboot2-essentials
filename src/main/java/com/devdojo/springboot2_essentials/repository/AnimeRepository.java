@@ -1,12 +1,6 @@
 package com.devdojo.springboot2_essentials.repository;
 
 import com.devdojo.springboot2_essentials.anime.Anime;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-@Repository
-public interface AnimeRepository {
-
-    public List<Anime> listAll();
-}
+public interface AnimeRepository extends JpaRepository<Anime, Long>{ }
