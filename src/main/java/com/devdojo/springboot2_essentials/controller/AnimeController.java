@@ -1,8 +1,8 @@
 package com.devdojo.springboot2_essentials.controller;
 
 import com.devdojo.springboot2_essentials.anime.Anime;
-import com.devdojo.springboot2_essentials.requests.AnimePostRequest;
-import com.devdojo.springboot2_essentials.requests.AnimePutRequest;
+import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
+import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
 import com.devdojo.springboot2_essentials.service.AnimeService;
 import com.devdojo.springboot2_essentials.util.DateUtil;
 import lombok.AllArgsConstructor;
@@ -35,7 +35,7 @@ public class AnimeController {
     }
 
     @PostMapping
-    public ResponseEntity<Anime> create(@RequestBody AnimePostRequest animePostRequest) {
+    public ResponseEntity<Anime> create(@RequestBody AnimePostRequestBody animePostRequest) {
         Anime obj = animeService.save(animePostRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(obj);
     }
@@ -47,9 +47,8 @@ public class AnimeController {
     }
 
     @PutMapping
-    public ResponseEntity<Void> updateById(@RequestBody AnimePutRequest animePutRequest) {
+    public ResponseEntity<Void> updateById(@RequestBody AnimePutRequestBody animePutRequest) {
         animeService.update(animePutRequest);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
 }
