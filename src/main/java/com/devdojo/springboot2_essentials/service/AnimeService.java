@@ -37,4 +37,8 @@ public class AnimeService {
         Anime anime = AnimeMapper.INSTANCE.toAnime(animePutRequestBody);
         return animeRepository.save(anime);
     }
+
+    public List<Anime> findByName(String name) {
+        return animeRepository.findByName(name);
+    }
 }
