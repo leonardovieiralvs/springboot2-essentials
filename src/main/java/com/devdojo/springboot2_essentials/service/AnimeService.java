@@ -5,7 +5,7 @@ import com.devdojo.springboot2_essentials.mapper.AnimeMapper;
 import com.devdojo.springboot2_essentials.repository.AnimeRepository;
 import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
-import com.devdojo.springboot2_essentials.service.excpetions.AnimeNotFoundExcpetion;
+import com.devdojo.springboot2_essentials.service.excpetions.AnimeNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class AnimeService {
     }
 
     public Anime findByIdOrThrowBadRequest(Long id) {
-        return animeRepository.findById(id).orElseThrow(() -> new AnimeNotFoundExcpetion("Anime not found"));
+        return animeRepository.findById(id).orElseThrow(() -> new AnimeNotFoundException("Anime not found"));
     }
 
     public Anime save(AnimePostRequestBody animePostRequestBody) {
