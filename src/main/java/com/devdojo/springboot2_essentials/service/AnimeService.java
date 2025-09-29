@@ -6,6 +6,7 @@ import com.devdojo.springboot2_essentials.repository.AnimeRepository;
 import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
 import com.devdojo.springboot2_essentials.service.excpetions.AnimeNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
