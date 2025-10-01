@@ -6,8 +6,9 @@ import com.devdojo.springboot2_essentials.repository.AnimeRepository;
 import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
 import com.devdojo.springboot2_essentials.service.excpetions.AnimeNotFoundException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +19,8 @@ public class AnimeService {
 
     private final AnimeRepository animeRepository;
 
-    public List<Anime> findAll() {
-        return animeRepository.findAll();
+    public Page<Anime> findAll(Pageable pageable) {
+        return animeRepository.findAll(pageable);
     }
 
     public Anime findByIdOrThrowBadRequest(Long id) {
