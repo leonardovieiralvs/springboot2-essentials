@@ -30,11 +30,5 @@ public class TestConfig implements CommandLineRunner {
         Anime a4 = new Anime(null, "Abacaxi");
 
         animeRepository.saveAll(Arrays.asList(anime, a1, a2, a3, a4));
-
-        ResponseEntity<Anime> forEntity = new RestTemplate().getForEntity("http://localhost:8080/animes/2", Anime.class);
-        log.info(forEntity);
-
-        Anime forObject = new RestTemplate().getForObject("http://localhost:8080/animes/2", Anime.class);
-        log.info(forObject);
     }
 }

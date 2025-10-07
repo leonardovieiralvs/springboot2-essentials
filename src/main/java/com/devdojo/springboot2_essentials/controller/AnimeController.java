@@ -25,10 +25,16 @@ public class AnimeController {
     private final DateUtil dateUtil;
     private final AnimeService animeService;
 
-    @GetMapping
-    public ResponseEntity<Page<Anime>> listAll(Pageable pageable) {
+    @GetMapping("/pages")
+    public ResponseEntity<Page<Anime>> listPageable(Pageable pageable) {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return ResponseEntity.ok(animeService.findAll(pageable));
+        return ResponseEntity.ok(animeService.listPageable(pageable));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Anime>> listAllAnimes() {
+        log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return ResponseEntity.ok(animeService.listAllAnimes());
     }
 
     @GetMapping("{id}")
