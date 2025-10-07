@@ -1,9 +1,11 @@
 package com.devdojo.springboot2_essentials;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@Log4j2
 public class Springboot2EssentialsApplication {
 
 	public static void main(String[] args) {
