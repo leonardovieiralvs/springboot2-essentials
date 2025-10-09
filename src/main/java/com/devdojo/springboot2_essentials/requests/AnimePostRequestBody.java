@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AnimePostRequestBody {
-    @NotEmpty(message = "request one name")
+    @NotEmpty(message = "The anime name cannot be empty!")
     private String name;
 
 }
