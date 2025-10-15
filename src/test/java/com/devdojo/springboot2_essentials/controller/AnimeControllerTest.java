@@ -56,7 +56,7 @@ public class AnimeControllerTest {
         when(animeServiceMock.save(ArgumentMatchers.any(AnimePostRequestBody.class)))
                 .thenReturn(AnimeCreator.createValidAnime());
 
-        doNothing().when(animeServiceMock).update(ArgumentMatchers.any(AnimePutRequestBody.class));
+        doNothing().when(animeServiceMock).replace(ArgumentMatchers.any(AnimePutRequestBody.class));
     }
 
     @Test

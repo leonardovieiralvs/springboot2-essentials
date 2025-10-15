@@ -39,7 +39,7 @@ public class AnimeService {
         animeRepository.delete(findByIdOrThrowBadRequest(id));
     }
 
-    public Anime update(AnimePutRequestBody animePutRequestBody) {
+    public Anime replace(AnimePutRequestBody animePutRequestBody) {
         Anime anime = AnimeMapper.INSTANCE.toAnime(animePutRequestBody);
         return animeRepository.save(anime);
     }

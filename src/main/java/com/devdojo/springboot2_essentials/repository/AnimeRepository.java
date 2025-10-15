@@ -1,6 +1,7 @@
 package com.devdojo.springboot2_essentials.repository;
 
 import com.devdojo.springboot2_essentials.anime.Anime;
+import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -4,7 +4,6 @@ import com.devdojo.springboot2_essentials.anime.Anime;
 import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
 import com.devdojo.springboot2_essentials.service.AnimeService;
-import com.devdojo.springboot2_essentials.util.DateUtil;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -58,7 +56,7 @@ public class AnimeController {
 
     @PutMapping
     public ResponseEntity<Void> updateById(@RequestBody AnimePutRequestBody animePutRequest) {
-        animeService.update(animePutRequest);
+        animeService.replace(animePutRequest);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
