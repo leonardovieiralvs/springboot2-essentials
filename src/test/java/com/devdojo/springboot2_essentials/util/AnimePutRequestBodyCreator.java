@@ -1,6 +1,5 @@
 package com.devdojo.springboot2_essentials.util;
 
-import com.devdojo.springboot2_essentials.requests.AnimePostRequestBody;
 import com.devdojo.springboot2_essentials.requests.AnimePutRequestBody;
 
 public class AnimePutRequestBodyCreator {

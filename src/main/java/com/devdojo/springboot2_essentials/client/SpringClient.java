@@ -2,6 +2,7 @@ package com.devdojo.springboot2_essentials.client;
 
 import com.devdojo.springboot2_essentials.anime.Anime;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -15,7 +16,7 @@ import java.util.List;
 public class SpringClient {
     public static void main(String[] args) {
 
-    /*
+
         //GET + DETAILS
         ResponseEntity<Anime> forEntity = new RestTemplate().getForEntity("http://localhost:8080/animes/2", Anime.class);
         log.info(forEntity);
@@ -33,7 +34,7 @@ public class SpringClient {
                 new ParameterizedTypeReference<List<Anime>>() {
                 });
         log.info(exchange.getBody());
-    */
+
 
         //POST ONLY BODY
         Anime naruto = Anime.builder().name("Naruto").build();
